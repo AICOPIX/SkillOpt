@@ -1,12 +1,12 @@
 # image_role_skill Data
 
-This folder is intentionally initialized with empty `items.json` arrays.
+This folder currently contains the first lightweight calibration set.
 
-Fill these files before real evaluation or training:
+- `train/items.json`: 10 lightweight optimization cases, used as `train v0.1`.
+- `val/items.json`: currently empty; add separate validation cases before real gated training.
+- `test/items.json`: currently empty; add separate held-out cases before final assessment.
 
-- `train/items.json`: examples SkillOpt uses to propose skill edits.
-- `val/items.json`: validation gate; decides whether an updated skill is accepted.
-- `test/items.json`: final held-out assessment.
+See `success-rubric.md` for the current pass/fail standard.
 
 Item shape:
 
@@ -22,4 +22,4 @@ Item shape:
 }
 ```
 
-Do not run real SkillOpt training until all three splits are non-empty and the success rubric is agreed.
+Do not treat results as real improvement evidence until all three splits are non-empty.

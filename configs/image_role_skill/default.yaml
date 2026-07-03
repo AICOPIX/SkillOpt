@@ -7,8 +7,8 @@ model:
   reasoning_effort: medium
 
 train:
-  train_size: 3
-  batch_size: 3
+  train_size: 10
+  batch_size: 4
   accumulation: 1
   num_epochs: 2
   seed: 42
