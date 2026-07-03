@@ -43,6 +43,24 @@ def _extract_final_prompt(response: str) -> str:
     return text
 
 
+def _load_packaged_references() -> str:
+    references_dir = Path(__file__).resolve().parent / "skills" / "references"
+    if not references_dir.exists():
+        return ""
+    chunks: list[str] = []
+    for path in sorted(references_dir.glob("*.md")):
+        chunks.append(f"\n\n## Reference: {path.name}\n\n{path.read_text(encoding='utf-8').strip()}")
+    return "".join(chunks)
+
+
+def _build_system_prompt(skill_content: str) -> str:
+    base = skill_content.strip() or "You optimize text-to-image prompts."
+    references = _load_packaged_references()
+    if not references:
+        return base
+    return f"{base}\n\n---\n\n# Bundled Skill References\n{references}"
+
+
 def _violates_exclusion(text: str, phrase: str) -> bool:
     normalized = _normalize_text(text)
     needle = _normalize_text(phrase)
@@ -117,7 +135,7 @@ def process_one(
     pred_dir = Path(out_root) / "predictions" / item_id
     pred_dir.mkdir(parents=True, exist_ok=True)
     user_prompt = _build_user(item)
-    system_prompt = skill_content.strip() or "You optimize text-to-image prompts."
+    system_prompt = _build_system_prompt(skill_content)
     if mock:
         prediction = _mock_prediction(item, skill_content)
     else:
