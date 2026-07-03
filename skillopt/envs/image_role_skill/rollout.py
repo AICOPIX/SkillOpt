@@ -19,6 +19,30 @@ def _contains(text: str, phrase: str) -> bool:
     return bool(needle) and needle in normalized
 
 
+def _extract_final_prompt(response: str) -> str:
+    text = str(response or "").strip()
+    lower = text.lower()
+    end_tag = "</think>"
+    if end_tag in lower:
+        index = lower.rfind(end_tag)
+        text = text[index + len(end_tag):].strip()
+    if "```" in text:
+        parts = text.split("```")
+        fenced_blocks = [part.strip() for index, part in enumerate(parts) if index % 2 == 1 and part.strip()]
+        if fenced_blocks:
+            text = fenced_blocks[-1]
+            if "\n" in text:
+                first_line, rest = text.split("\n", 1)
+                if first_line.strip().lower() in {"text", "prompt", "markdown", "md"}:
+                    text = rest
+    text = text.strip()
+    prefixes = ("最终prompt：", "最终 prompt：", "最终Prompt：", "Final prompt:", "Final Prompt:")
+    for prefix in prefixes:
+        if text.startswith(prefix):
+            text = text[len(prefix):].strip()
+    return text
+
+
 def _violates_exclusion(text: str, phrase: str) -> bool:
     normalized = _normalize_text(text)
     needle = _normalize_text(phrase)
@@ -29,6 +53,12 @@ def _violates_exclusion(text: str, phrase: str) -> bool:
         f"without {needle}",
         f"exclude {needle}",
         f"excluding {needle}",
+        f"无{needle}",
+        f"无任何{needle}",
+        f"没有{needle}",
+        f"不要{needle}",
+        f"不出现{needle}",
+        f"禁止{needle}",
     )
     return not any(negation in normalized for negation in allowed_negations)
 
@@ -91,15 +121,18 @@ def process_one(
     if mock:
         prediction = _mock_prediction(item, skill_content)
     else:
-        prediction, _usage = chat_target(
+        response, _usage = chat_target(
             system=system_prompt,
             user=user_prompt,
             max_completion_tokens=max_completion_tokens,
         )
+        prediction = _extract_final_prompt(response)
     hard, soft, fail_reason = _score(prediction, item)
     (pred_dir / "target_system_prompt.txt").write_text(system_prompt, encoding="utf-8")
     (pred_dir / "target_user_prompt.txt").write_text(user_prompt, encoding="utf-8")
     (pred_dir / "prediction.txt").write_text(prediction, encoding="utf-8")
+    if not mock:
+        (pred_dir / "raw_response.txt").write_text(response, encoding="utf-8")
     return {
         "id": item_id,
         "task_type": item.get("task_type", "image_role_prompt"),
