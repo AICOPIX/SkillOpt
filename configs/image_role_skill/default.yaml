@@ -7,7 +7,7 @@ model:
   reasoning_effort: medium
 
 train:
-  train_size: 10
+  train_size: 6
   batch_size: 4
   accumulation: 1
   num_epochs: 2
@@ -20,10 +20,12 @@ gradient:
 
 optimizer:
   learning_rate: 4
+  use_slow_update: false
+  use_meta_skill: false
 
 evaluation:
-  sel_env_num: 0
-  test_env_num: 0
+  sel_env_num: 2
+  test_env_num: 2
   use_gate: true
   eval_test: true
 

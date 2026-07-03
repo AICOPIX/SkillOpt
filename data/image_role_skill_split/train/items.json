@@ -2,9 +2,25 @@
   {
     "id": "train_v0_1_001",
     "input_prompt": "一只橘猫趴在窗边晒太阳",
-    "fixed_facts": ["一只橘猫", "趴在窗边", "晒太阳"],
-    "must_include": ["自然光", "主体清晰", "真实摄影风格", "背景简洁"],
-    "must_exclude": ["第二只猫", "人物", "狗", "奇幻场景", "品牌", "文字"],
+    "fixed_facts": [
+      "一只橘猫",
+      "趴在窗边",
+      "晒太阳"
+    ],
+    "must_include": [
+      "自然光",
+      "主体清晰",
+      "真实摄影风格",
+      "背景简洁"
+    ],
+    "must_exclude": [
+      "第二只猫",
+      "人物",
+      "狗",
+      "奇幻场景",
+      "品牌",
+      "文字"
+    ],
     "visual_type": "photography_life_scene",
     "task_type": "lightweight_optimization",
     "reference_output": "一只橘猫趴在窗边晒太阳，午后自然光，猫咪主体清晰，毛发细节自然，背景简洁，真实摄影风格，画面干净自然。"
@@ -12,9 +28,25 @@
   {
     "id": "train_v0_1_002",
     "input_prompt": "现代客厅，原木风，白天自然光，不要人物",
-    "fixed_facts": ["现代客厅", "原木风", "白天自然光", "不要人物"],
-    "must_include": ["空间布局", "木质材质", "自然光", "真实室内摄影风格"],
-    "must_exclude": ["人物", "欧式宫廷风", "赛博朋克", "夜景", "红蓝霓虹"],
+    "fixed_facts": [
+      "现代客厅",
+      "原木风",
+      "白天自然光",
+      "不要人物"
+    ],
+    "must_include": [
+      "空间布局",
+      "木质材质",
+      "自然光",
+      "真实室内摄影风格"
+    ],
+    "must_exclude": [
+      "人物",
+      "欧式宫廷风",
+      "赛博朋克",
+      "夜景",
+      "红蓝霓虹"
+    ],
     "visual_type": "interior_design",
     "task_type": "lightweight_optimization",
     "reference_output": "现代原木风客厅室内设计，简洁开放式布局，木质地板与原木家具，白天自然光从窗边进入，浅色墙面，空间干净通透，真实室内摄影风格，不要人物。"
@@ -22,9 +54,26 @@
   {
     "id": "train_v0_1_003",
     "input_prompt": "做一张科技感 AI 产品发布会海报，标题是“ARVUNE 2026”，黑金配色，竖版4:5，不要真实品牌logo",
-    "fixed_facts": ["科技感 AI 产品发布会海报", "标题：“ARVUNE 2026”", "黑金配色", "竖版 4:5", "不要真实品牌 logo"],
-    "must_include": ["主标题清晰可读", "科技感背景", "海报版式", "黑金视觉"],
-    "must_exclude": ["改标题", "其他品牌 logo", "乱码文字", "蓝紫配色替代黑金", "人物主视觉"],
+    "fixed_facts": [
+      "科技感 AI 产品发布会海报",
+      "标题：“ARVUNE 2026”",
+      "黑金配色",
+      "竖版 4:5",
+      "不要真实品牌 logo"
+    ],
+    "must_include": [
+      "主标题清晰可读",
+      "科技感背景",
+      "海报版式",
+      "黑金视觉"
+    ],
+    "must_exclude": [
+      "改标题",
+      "其他品牌 logo",
+      "乱码文字",
+      "蓝紫配色替代黑金",
+      "人物主视觉"
+    ],
     "visual_type": "poster_design",
     "task_type": "lightweight_optimization",
     "reference_output": "竖版 4:5 科技感 AI 产品发布会海报，黑金配色，主标题“ARVUNE 2026”清晰可读，居中主视觉为抽象 AI 光效核心，背景为深黑渐变与金色科技线条，版式简洁高级，不要真实品牌 logo。"
@@ -32,9 +81,24 @@
   {
     "id": "train_v0_1_004",
     "input_prompt": "一个蓝色陶瓷杯放在白色桌面上",
-    "fixed_facts": ["一个", "蓝色陶瓷杯", "白色桌面"],
-    "must_include": ["产品主体清晰", "陶瓷质感", "柔和光线", "干净背景"],
-    "must_exclude": ["多个杯子", "人物", "咖啡品牌", "复杂厨房", "文字标签"],
+    "fixed_facts": [
+      "一个",
+      "蓝色陶瓷杯",
+      "白色桌面"
+    ],
+    "must_include": [
+      "产品主体清晰",
+      "陶瓷质感",
+      "柔和光线",
+      "干净背景"
+    ],
+    "must_exclude": [
+      "多个杯子",
+      "人物",
+      "咖啡品牌",
+      "复杂厨房",
+      "文字标签"
+    ],
     "visual_type": "product_render",
     "task_type": "lightweight_optimization",
     "reference_output": "一个蓝色陶瓷杯放在白色桌面上，产品主体清晰，陶瓷釉面质感自然，柔和 studio 光线，背景干净简洁，真实产品摄影风格。"
@@ -42,9 +106,24 @@
   {
     "id": "train_v0_1_005",
     "input_prompt": "设计一个极简记账 App 首页，浅色模式",
-    "fixed_facts": ["记账 App 首页", "极简风格", "浅色模式"],
-    "must_include": ["顶部余额区域", "消费分类卡片", "底部导航", "清晰 UI 层级"],
-    "must_exclude": ["深色模式", "复杂游戏界面", "社交媒体页面", "真实品牌 logo", "乱码文字"],
+    "fixed_facts": [
+      "记账 App 首页",
+      "极简风格",
+      "浅色模式"
+    ],
+    "must_include": [
+      "顶部余额区域",
+      "消费分类卡片",
+      "底部导航",
+      "清晰 UI 层级"
+    ],
+    "must_exclude": [
+      "深色模式",
+      "复杂游戏界面",
+      "社交媒体页面",
+      "真实品牌 logo",
+      "乱码文字"
+    ],
     "visual_type": "ui_design",
     "task_type": "lightweight_optimization",
     "reference_output": "极简记账 App 首页界面，浅色模式，顶部显示余额概览，中部为消费分类卡片和月度支出图表，底部导航栏清晰，留白充足，圆角卡片设计，文字清晰可读。"
@@ -52,51 +131,26 @@
   {
     "id": "train_v0_1_006",
     "input_prompt": "AI 绘画工具的官网首页，深色玻璃拟态风格",
-    "fixed_facts": ["AI 绘画工具", "官网首页", "深色玻璃拟态"],
-    "must_include": ["Hero 区域", "导航栏", "CTA 按钮", "产品展示区", "玻璃拟态卡片"],
-    "must_exclude": ["浅色极简办公网站", "电商商品详情页", "真实品牌 logo", "人物写真主视觉"],
+    "fixed_facts": [
+      "AI 绘画工具",
+      "官网首页",
+      "深色玻璃拟态"
+    ],
+    "must_include": [
+      "Hero 区域",
+      "导航栏",
+      "CTA 按钮",
+      "产品展示区",
+      "玻璃拟态卡片"
+    ],
+    "must_exclude": [
+      "浅色极简办公网站",
+      "电商商品详情页",
+      "真实品牌 logo",
+      "人物写真主视觉"
+    ],
     "visual_type": "web_design",
     "task_type": "lightweight_optimization",
     "reference_output": "AI 绘画工具官网首页，深色玻璃拟态风格，顶部导航栏，中央 Hero 区域展示产品主标题和 CTA 按钮，下方为生成作品展示卡片，半透明玻璃面板，蓝紫色柔和光效，现代科技感网页设计。"
-  },
-  {
-    "id": "train_v0_1_007",
-    "input_prompt": "一个小女孩在雨天公交站等车，电影感",
-    "fixed_facts": ["一个小女孩", "雨天", "公交站", "等车", "电影感"],
-    "must_include": ["雨水", "公交站环境", "电影级光影", "情绪氛围"],
-    "must_exclude": ["多个小孩", "科幻战斗", "恐怖血腥", "成年人替代小女孩", "晴天"],
-    "visual_type": "cinematic_scene",
-    "task_type": "lightweight_optimization",
-    "reference_output": "一个小女孩在雨天公交站等车，湿润街道和公交站灯光形成柔和反射，雨水细节清晰，女孩安静站在站牌旁，电影感构图，低饱和色调，氛围安静真实。"
-  },
-  {
-    "id": "train_v0_1_008",
-    "input_prompt": "一张关于咖啡制作流程的信息图，3个步骤，中文",
-    "fixed_facts": ["咖啡制作流程", "信息图", "3 个步骤", "中文"],
-    "must_include": ["标题区", "3 个模块", "步骤编号", "简短中文标签", "清晰层级"],
-    "must_exclude": ["4 个或更多步骤", "英文主文案", "密集长段文字", "复杂统计图", "真实品牌 logo"],
-    "visual_type": "infographic",
-    "task_type": "lightweight_optimization",
-    "reference_output": "中文咖啡制作流程信息图，顶部标题区，下方 3 个步骤模块：研磨咖啡豆、冲煮萃取、倒入杯中；每个步骤配简洁图标和短中文标签，版式清晰，浅色背景，信息层级明确。"
-  },
-  {
-    "id": "train_v0_1_009",
-    "input_prompt": "一个 Q 版机器人角色，白色外壳，绿色眼睛",
-    "fixed_facts": ["一个 Q 版机器人角色", "白色外壳", "绿色眼睛"],
-    "must_include": ["可爱比例", "圆润造型", "角色主体清晰", "简单背景"],
-    "must_exclude": ["多个机器人", "红色眼睛", "黑色机甲", "真人", "复杂战斗场景", "品牌 logo"],
-    "visual_type": "character_design",
-    "task_type": "lightweight_optimization",
-    "reference_output": "一个 Q 版机器人角色，白色圆润外壳，绿色眼睛，可爱比例，主体清晰，简单站立姿态，干净浅色背景，柔和 3D 角色设计风格。"
-  },
-  {
-    "id": "train_v0_1_010",
-    "input_prompt": "一座现代美术馆建筑外观，混凝土和玻璃材质，黄昏",
-    "fixed_facts": ["一座现代美术馆", "建筑外观", "混凝土和玻璃材质", "黄昏"],
-    "must_include": ["建筑透视", "外立面材质", "黄昏光线", "建筑可视化风格", "环境简洁"],
-    "must_exclude": ["室内客厅", "古典宫殿", "白天正午", "木结构为主", "人群拥挤"],
-    "visual_type": "architecture_render",
-    "task_type": "lightweight_optimization",
-    "reference_output": "一座现代美术馆建筑外观，清晰建筑透视，混凝土体块与大面积玻璃立面，黄昏柔和光线，入口广场简洁，真实建筑可视化效果图风格，材质细节自然。"
   }
 ]

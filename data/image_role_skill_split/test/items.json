@@ -1,1 +1,55 @@
-[]
+[
+  {
+    "id": "train_v0_1_009",
+    "input_prompt": "一个 Q 版机器人角色，白色外壳，绿色眼睛",
+    "fixed_facts": [
+      "一个 Q 版机器人角色",
+      "白色外壳",
+      "绿色眼睛"
+    ],
+    "must_include": [
+      "可爱比例",
+      "圆润造型",
+      "角色主体清晰",
+      "简单背景"
+    ],
+    "must_exclude": [
+      "多个机器人",
+      "红色眼睛",
+      "黑色机甲",
+      "真人",
+      "复杂战斗场景",
+      "品牌 logo"
+    ],
+    "visual_type": "character_design",
+    "task_type": "lightweight_optimization",
+    "reference_output": "一个 Q 版机器人角色，白色圆润外壳，绿色眼睛，可爱比例，主体清晰，简单站立姿态，干净浅色背景，柔和 3D 角色设计风格。"
+  },
+  {
+    "id": "train_v0_1_010",
+    "input_prompt": "一座现代美术馆建筑外观，混凝土和玻璃材质，黄昏",
+    "fixed_facts": [
+      "一座现代美术馆",
+      "建筑外观",
+      "混凝土和玻璃材质",
+      "黄昏"
+    ],
+    "must_include": [
+      "建筑透视",
+      "外立面材质",
+      "黄昏光线",
+      "建筑可视化风格",
+      "环境简洁"
+    ],
+    "must_exclude": [
+      "室内客厅",
+      "古典宫殿",
+      "白天正午",
+      "木结构为主",
+      "人群拥挤"
+    ],
+    "visual_type": "architecture_render",
+    "task_type": "lightweight_optimization",
+    "reference_output": "一座现代美术馆建筑外观，清晰建筑透视，混凝土体块与大面积玻璃立面，黄昏柔和光线，入口广场简洁，真实建筑可视化效果图风格，材质细节自然。"
+  }
+]
