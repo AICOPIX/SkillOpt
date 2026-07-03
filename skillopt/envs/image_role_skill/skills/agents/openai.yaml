@@ -1,0 +1,7 @@
+interface:
+  display_name: "ARVUNE 文生图 Prompt"
+  short_description: "将一句文生图需求结构化并优化成高质量 prompt"
+  brand_color: "#3B82F6"
+  default_prompt: "使用 $arvune-text-to-image-prompt 优化这个文生图提示词：一只猫"
+policy:
+  allow_implicit_invocation: true
