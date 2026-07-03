@@ -234,6 +234,26 @@ def chat_target(
     )
 
 
+def chat_optimizer(
+    system: str,
+    user: str,
+    max_completion_tokens: int = 16384,
+    retries: int = 5,
+    stage: str = "optimizer",
+    reasoning_effort: str | None = None,
+    timeout: float | None = None,
+) -> tuple[str, dict[str, int]]:
+    return chat_target(
+        system=system,
+        user=user,
+        max_completion_tokens=max_completion_tokens,
+        retries=retries,
+        stage=stage,
+        reasoning_effort=reasoning_effort,
+        timeout=timeout,
+    )
+
+
 def chat_target_messages(
     messages: list[dict[str, Any]],
     max_completion_tokens: int = 16384,
@@ -252,6 +272,31 @@ def chat_target_messages(
         max_completion_tokens,
         retries,
         stage,
+        tools=tools,
+        tool_choice=tool_choice,
+        return_message=return_message,
+        timeout=timeout,
+    )
+
+
+def chat_optimizer_messages(
+    messages: list[dict[str, Any]],
+    max_completion_tokens: int = 16384,
+    retries: int = 5,
+    stage: str = "optimizer",
+    reasoning_effort: str | None = None,
+    *,
+    tools: list[dict[str, Any]] | None = None,
+    tool_choice: str | dict[str, Any] | None = None,
+    return_message: bool = False,
+    timeout: float | None = None,
+) -> tuple[Any, dict[str, int]]:
+    return chat_target_messages(
+        messages=messages,
+        max_completion_tokens=max_completion_tokens,
+        retries=retries,
+        stage=stage,
+        reasoning_effort=reasoning_effort,
         tools=tools,
         tool_choice=tool_choice,
         return_message=return_message,
