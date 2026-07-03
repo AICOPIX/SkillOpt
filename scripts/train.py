@@ -39,6 +39,11 @@ _ENV_REGISTRY: dict[str, type] = {}
 def _register_builtins() -> None:
     """Lazy-import built-in adapters so we don't pull heavy deps at CLI parse time."""
     try:
+        from skillopt.envs.image_role_skill.adapter import ImageRoleSkillAdapter
+        _ENV_REGISTRY["image_role_skill"] = ImageRoleSkillAdapter
+    except ImportError:
+        pass
+    try:
         from skillopt.envs.alfworld.adapter import ALFWorldAdapter
         _ENV_REGISTRY["alfworld"] = ALFWorldAdapter
     except ImportError:

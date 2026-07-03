@@ -49,6 +49,11 @@ _ENV_REGISTRY: dict[str, type] = {}
 
 def _register_builtins() -> None:
     try:
+        from skillopt.envs.image_role_skill.adapter import ImageRoleSkillAdapter
+        _ENV_REGISTRY["image_role_skill"] = ImageRoleSkillAdapter
+    except ImportError:
+        pass
+    try:
         from skillopt.envs.alfworld.adapter import ALFWorldAdapter
         _ENV_REGISTRY["alfworld"] = ALFWorldAdapter
     except ImportError:
